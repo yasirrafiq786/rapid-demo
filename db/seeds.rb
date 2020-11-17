@@ -9,7 +9,7 @@ end
 
 puts "Creating Jobs"
 10.times do
-  Job.create!(pickup_address: Faker::Address.street_address, dropoff_address: Faker::Address.street_address, payment: Faker::Number.decimal(l_digits: 2), user_id: rand(1..4))
+  Job.create!(pickup_address: Faker::Address.street_address, dropoff_address: Faker::Address.street_address, payment: Faker::Number.decimal(l_digits: 2))
 end
 
 puts "Finished"

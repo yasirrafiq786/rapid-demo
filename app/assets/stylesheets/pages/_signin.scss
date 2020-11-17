@@ -1,0 +1,58 @@
+.signin-page {
+  background-color: rgb(238,238,238);
+  height: 100vh;
+  font-family: $headers-font;
+  display:flex;
+  justify-content: center;
+  
+}
+
+.signin-content {
+  align-self: center;
+  width: 100vw;
+}
+
+.signin-heading {
+  display: flex;
+  justify-content: center;
+}
+  
+  
+  .heading-text {
+    h3 {
+    margin-bottom: 0;
+    font-weight: bold;
+  }
+}
+
+.heading-logo {
+  margin-right: 8px;
+  margin-top: 0;
+  font-weight: bolder;
+  h3 {
+  transform: rotate(-90deg);
+  font-weight: 900;
+  }
+}
+
+.form-field {
+  margin: 8px;
+}
+
+.signin-btn {
+  display: flex;
+  justify-content: center;
+  background-color: rgb(197,197,197);
+  margin: 8px;
+  
+}
+
+.text-field {
+  background-color:transparent ;
+  border: transparent;
+  
+  &:focus {
+    background-color: transparent;
+    border-bottom: 1px solid #009688 ;
+  }
+}

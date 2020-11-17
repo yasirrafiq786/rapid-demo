@@ -1,16 +1,29 @@
-<h2>Log in</h2>
-<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="form-inputs">
-    <%= f.input :email,
+<div class="signin-page">
+  <div class="signin-content">
+    <div class="signin-heading">
+      <div class="heading-logo">
+        <h3>V</h3>
+      </div>
+      <div class="heading-text">
+        <h3>Rapid Courier</h3>
+      </div>
+    </div>
+    <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class="form-inputs">
+        <%= f.input :email, placeholder: "Username", wrapper_html: {class:'form-field'},
+                label: false,
                 required: false,
-                autofocus: true,
-                input_html: { autocomplete: "email" } %>
-    <%= f.input :password,
+                
+                input_html: { autocomplete: "email", class:"text-field" } %>
+        <%= f.input :password, wrapper_html: {class:'form-field'},
+                label:false,
+                placeholder:"Password",
                 required: false,
-                input_html: { autocomplete: "current-password" } %>
-    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+                input_html: { autocomplete: "current-password", class:"text-field"} %>
+      </div>
+      <div class="form-actions signin-btn">
+        <%= f.button :submit, "SIGN IN"  %>
+      </div>
+    <% end %>
   </div>
-  <div class="form-actions">
-    <%= f.button :submit, "SIGN IN" %>
-  </div>
-<% end %>
+</div>

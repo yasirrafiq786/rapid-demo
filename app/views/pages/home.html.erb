@@ -1,2 +1,8 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<%= link_to 'signout', destroy_user_session_path, method: 'delete' %>
+<h1>Jobs</h1>
+<% @jobs.each do |job|%>
+  <p>Pickup from <%= job.pickup_address %></p>
+  <p>Drop-off at <%= job.dropoff_address %></p>
+  <p>Pays $<%= job.payment %></p>
+  <%= link_to 'ACCEPT', job_path(job, job: {accepted: true}), method: 'patch', remote: true %>
+<% end%>
