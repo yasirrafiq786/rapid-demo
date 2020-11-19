@@ -36,23 +36,28 @@
 }
 
 .form-field {
-  margin: 8px;
+  margin: 40px 8px 40px 8px;
+
 }
 
 .signin-btn {
   display: flex;
   justify-content: center;
   background-color: rgb(197,197,197);
-  margin: 8px;
+  margin: 48px 8px 0px 8px;
+  border-radius: 2px;
   
 }
 
 .text-field {
   background-color:transparent ;
   border: transparent;
-  
+  border-bottom: 1px solid #009688 ;
+  transition: border-bottom 0.2s ease-in-out;
   &:focus {
     background-color: transparent;
-    border-bottom: 1px solid #009688 ;
+    border-bottom: 3px solid #009688 ;
   }
+  
 }
+
