@@ -2,6 +2,7 @@ class JobsController < ApplicationController
   def update
     @job = Job.find(params[:id])
     if !@job.accepted
+      @job.user = current_user
       if @job.update(job_params)
         flash[:notice] = "You have accepted the Job"
         redirect_to root_path
@@ -15,6 +16,6 @@ class JobsController < ApplicationController
   private
 
   def job_params
-    params.require(:job).permit(:accepted)
+    params.require(:job).permit(:accepted, :user_id)
   end
 end

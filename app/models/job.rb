@@ -1,5 +1,5 @@
 class Job < ApplicationRecord
-  has_many :users, through: :user_jobs
+  belongs_to :user, optional: true
 
   validates :pickup_address, presence: true
   validates :dropoff_address, presence: true
