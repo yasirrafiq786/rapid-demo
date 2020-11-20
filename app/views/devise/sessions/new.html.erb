@@ -10,19 +10,19 @@
     </div>
     <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="form-inputs">
-        <%= f.input :email, placeholder: "Username", wrapper_html: {class:'form-field'},
+        <%= f.input :email, placeholder: "Username...", wrapper_html: {class:'form-field'},
                 label: false,
                 required: false,
                 
                 input_html: { autocomplete: "email", class:"text-field" } %>
         <%= f.input :password, wrapper_html: {class:'form-field'},
                 label:false,
-                placeholder:"Password",
+                placeholder:"Password...",
                 required: false,
                 input_html: { autocomplete: "current-password", class:"text-field"} %>
       </div>
       <div class="form-actions signin-btn">
-        <%= f.button :submit, "SIGN IN"  %>
+        <%= f.button :submit, "SIGN IN", class: "btn-self" %>
       </div>
     <% end %>
   </div>

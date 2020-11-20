@@ -1,8 +1,33 @@
-<%= link_to 'signout', destroy_user_session_path, method: 'delete' %>
-<h1>Jobs</h1>
-<% @jobs.each do |job|%>
-  <p>Pickup from <%= job.pickup_address %></p>
-  <p>Drop-off at <%= job.dropoff_address %></p>
-  <p>Pays $<%= job.payment %></p>
-  <%= link_to 'ACCEPT', job_path(job, job: {accepted: true}), method: 'patch', remote: true %>
-<% end%>
+<div class="index-page">
+  <div class="signin-heading list-header">
+    <div class="heading-logo header-logo">
+      <h3>V</h3>
+    </div>
+    <div class="heading-text header-text">
+      <h3>Rapid Courier</h3>
+    </div>
+  </div>
+  <%= link_to 'signout', destroy_user_session_path, method: 'delete' %>
+  <% @jobs.each do |job|%>
+    <div class="job-card">
+      <div class="job-details">
+        <h4>Job</h4>
+        <div class="job-subdetail">
+          <i class="fas fa-arrow-up"></i>
+          <p>Pickup from <strong><%= job.pickup_address %></strong></p>
+        </div>
+        <div class="job-subdetail">
+          <i class="fas fa-arrow-down"></i>
+          <p>Drop-off at <strong><%= job.dropoff_address %></strong></p>
+        </div>
+        <div class="job-subdetail">
+          <i class="fas fa-dollar-sign"></i>
+          <p>Pays <strong>$<%= job.payment %></strong></p>
+        </div>
+      </div>
+      <div class="accept-card">
+        <%= link_to 'ACCEPT', job_path(job, job: {accepted: true}), method: 'patch', remote: true, class: 'link-text' %>
+      </div>
+    </div>
+  <% end%>
+</div>
