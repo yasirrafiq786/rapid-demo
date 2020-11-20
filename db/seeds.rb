@@ -1,5 +1,9 @@
 require "faker"
 
+puts "Destroying everything"
+Job.destroy_all
+User.destroy_all
+
 emails = %w(test@test.com john@john.com bob@bob.com jack@jack.com)
 
 puts "Generating Users"
